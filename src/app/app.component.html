@@ -17,4 +17,17 @@
     <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
   </li>
 </ul>
+<div>
+  <form #form="ngForm" (submit)="submitForm()" novalidate >
+  <fieldset><label>Name : </label><input type="text" #name="ngModel" required [(ngModel)]="customer.name" name="name" /><br/>
+   <label> city : </label> <input type="text" #city="ngModel" [(ngModel)]="customer.city" name="city"  /> <br/>
+    <label> Mobile no :</label><input type="text"  #mobileno="ngModel" [(ngModel)]="number" name="mobileno"  /><br/> <br/>
+    <input type="submit" value="Save" />
+  </fieldset>
+</form>
+</div>
+<div>
+  <child [name]="customer.name" [num]="number" [cust]="this.customer" [(appComponent)]="this.appComponent"
+  [submitChange]="submitChange"></child>
+</div>
 
